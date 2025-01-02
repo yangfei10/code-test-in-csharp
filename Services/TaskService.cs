@@ -77,7 +77,7 @@ namespace appointmentAPI.Services
                 {
                     throw new Exception("Task not found");
                 }
-                _taskRepository.UpdateTask(task);
+                _taskRepository.UpdateTask(id, task);
             }
             catch
             {

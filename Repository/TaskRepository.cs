@@ -5,8 +5,10 @@ namespace appointmentAPI.Repository
     public class TaskRepository : ITaskRepository
     {
         List<Task> tasks = new List<Task>();
+        private int nextId = 1; 
         public void AddTask(Task task)
         {
+            task.Id = nextId++;
             tasks.Add(task);
         }
 
@@ -29,9 +31,9 @@ namespace appointmentAPI.Repository
             return tasks;
         }
 
-        public void UpdateTask(Task task)
+        public void UpdateTask(int id, Task task)
         {
-            Task taskToUpdate = tasks.First(t => t.Id == task.Id);
+            Task taskToUpdate = tasks.First(t => t.Id == id);
             if (taskToUpdate != null)
             {
                 taskToUpdate.Name = task.Name;

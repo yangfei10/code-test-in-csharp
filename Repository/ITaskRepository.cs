@@ -6,7 +6,7 @@ namespace appointmentAPI.Repository
         void AddTask(Task task);
         List<Task> GetTasks();
         Task GetTaskDetail(int id);
-        void UpdateTask(Task task);
+        void UpdateTask(int id, Task task);
         void DeleteTask(int id);
 
     }
